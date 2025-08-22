@@ -1,343 +1,161 @@
-:root{
-    --primary-color: #8b4513;
-    --brackgroung-color: #fffaf5;
-    --footer-backgroung-color: #0a0a1a;
-    --light-color: #f9e8d6;
-    --text-dark: #222;
-    --text-muted: #555;
-    --font-body: 'Poppins', sans-serif;
-    --font-logo: 'Pacifico', cursive;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            src: url('fonts/Poppins-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 700;
+            src: url('fonts/Poppins-Bold.ttf') format('truetype');
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/aurora-capa.jpg') no-repeat center center/cover;
+        }
+        
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-orange-50 text-gray-800">
+    <!-- HEADER -->
+    <header class="bg-orange-50 shadow-md w-full py-4">
+        <div class="w-4/5 max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="font-pacifico text-3xl text-amber-700 font-medium">Café Aurora</h1>
+            <nav aria-label="Menu Principal"> 
+                <!-- Menu Mobile -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-2xl font-black bg-transparent border-0" aria-label="abrir o menu mobile">☰</button>
+                </div>    
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex">
+                    <ul class="flex flex-row items-center gap-6">
+                        <li><a href="#" class="font-semibold hover:text-amber-700 transition-colors">Início</a></li>
+                        <li><a href="#" class="font-semibold hover:text-amber-700 transition-colors">Cárdapio</a></li>
+                        <li><a href="#" class="font-semibold hover:text-amber-700 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-bg py-32 lg:py-64">
+                <div class="text-center text-orange-50 z-10 px-8">
+                    <h2 class="text-4xl font-black leading-tight mb-4">Sinta o sabor do verdadeiro café</h2>
+                    <p class="text-xl mb-8">Uma experiência única de sabores intensos e aromas envolventes, preparados com grãos selecionados e muito carinho</p>
+                    <a href="#cardapio" class="inline-block bg-amber-700 text-orange-50 px-7 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all duration-500">Conheça nosso cardápio</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARDÁPIO SECTION -->
+        <section class="bg-white py-20">
+            <div class="w-4/5 max-w-6xl mx-auto">
+                <h2 class="text-center text-3xl mb-2">Nossos Cafés Especiais</h2>
+                <p class="text-center max-w-2xl mx-auto mb-12 text-gray-600">Descubra nossa seleção de cafés premium, cuidadosamente preparados para oferecer uma experiência sensorial inesquecível</p>
+            </div>
+            
+            <div class="w-4/5 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <img src="images/espresso.jpg" alt="Espresso Clássico" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Espresso Clássico</h3>
+                        <p class="text-gray-600 mb-4">Intenso e Encorpado, com crema perfeito e notas de chocolate amargo</p>
+                        <span class="font-bold text-amber-700">R$ 8,90</span>
+                    </div>
+                </div>
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <img src="images/capuccino.jpg" alt="Capuccino Cremoso" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Capuccino Cremoso</h3>
+                        <p class="text-gray-600 mb-4">Equilibrado e suave, com espuma aveludada e canela polvilhada</p>
+                        <span class="font-bold text-amber-700">R$ 12,50</span>
+                    </div>
+                </div>
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <img src="images/cafe-gelado.jpg" alt="Café Gelado" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Café Gelado</h3>
+                        <p class="text-gray-600 mb-4">Refrescante e aromático, com toques de baunilha e calda de caramelo</p>
+                        <span class="font-bold text-amber-700">R$ 14,90</span>
+                    </div>
+                </div>
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <img src="images/cafe-coado-especial.jpg" alt="Café Coado" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Café Coado Especial</h3>
+                        <p class="text-gray-600 mb-4">Método tradicional, que realça notas frutadas e acidez equilibrada</p>
+                        <span class="font-bold text-amber-700">R$ 10,50</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="bg-orange-100 py-16">
+            <div class="w-4/5 max-w-6xl mx-auto">
+                <div class="bg-white rounded-2xl overflow-hidden flex flex-col lg:flex-row max-w-4xl mx-auto">
+                    <div class="flex-1 p-4 mb-8 lg:p-12 lg:mb-0">
+                        <h2 class="text-2xl lg:text-4xl mb-4 lg:mt-2">Horário de Funcionamento</h2>
+                        <div class="mb-6">
+                            <p class="flex justify-between py-1"><span>Segunda a Sexta</span><span>07:00 - 20:00</span></p>
+                            <p class="flex justify-between py-1"><span>Sábado</span><span>08:00 - 22:00</span></p>
+                            <p class="flex justify-between py-1"><span>Domingo</span><span>09:00 - 18:00</span></p>
+                        </div>
+                        <div class="py-6 mb-4">
+                            <p class="font-bold">Endereço</p>
+                            <p>Rua das Flores, 123 - Centro</p>
+                            <p>São Paulo, SP</p>
+                        </div>
+                        <a href="#" class="inline-block bg-amber-700 text-orange-50 px-7 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all duration-500">Ver no Mapa</a>
+                    </div>
+                    <div class="flex-1 max-h-80 lg:max-h-96 flex">
+                        <img src="images/aurora-horario.jpg" alt="Café sendo servido" class="w-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-
-    }
-    
-@font-face {
-    font-family: 'Pacifico';
-    src: url('fonts/Pacifico-Regular.ttf') format('truetype');
-    }
-@font-face {
-    font-family: 'Poppins';
-    src: url('fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    }
-
-@font-face {
-    font-family: 'Poppins';
-    font-weight: 700;
-    src: url('fonts/Poppins-Bold.ttf') format('truetype');
-}
-body {
-    font-family: var(--font-body);
-    background-color: var(--brackgroung-color);
-    color: var(--text-dark);
-}
-
-img{
-    max-width: 100%;
-    display: block;
-}
-
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-ul li{
-    list-style:none;
-}
-
-.container{
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-
-}
-
-.header{
-    background-color: var(--brackgroung-color);
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-.header-inner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo{
-    font-family: var(--font-logo);
-    font-size: 2rem;
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.menu-desktop{
-    display: none;
-}
-#menu-toggle {   
-    font-weight: 900;
-    font-size: 1.5rem;
-    border: 0;
-    background-color: var(--brackgroung-color);
-}
-
-.hero-overlay{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/aurora-capa.jpg') no-repeat center center/cover;
-    padding: 8rem 0;
-}
-
-.hero-content{
-    text-align: center;
-    color: var(--brackgroung-color);
-    z-index: 2;
-    padding: 2rem;
-}
-
-.hero-content h2{
-    font-size: 2.5rem;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-.hero-content p{
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.btn{
-    background: var(--primary-color);
-    color: var(--light-color);
-    padding: 1rem 1.8rem;
-    border-radius: 8px;
-    font-weight: 600;    
-}
-
-.btn:hover{
-    background: #5c2e0f;
-    transition: 0.5s;
-}
-
-.cardapio{
-    background-color: #fff;
-    padding: 5rem 0;
-}
-
-.cardapio h2{
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.descricao{
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 3rem;
-    color: var(--text-muted);
-}
-
-.grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.card{
-    background: var(--light-color);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-}
-
-.card-body{
-    padding: 1.5rem;
-}
-
-.card-body h3{
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-body p{
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-}
-
-.card-body .price {
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.contact{
-    background-color: var(--light-color);
-    padding: 4rem 0;
-}
-
-.contact-box{
-    background-color: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-text{
-    padding: 1rem;
-    margin-bottom: 2rem;
-}
-.contact-text h2{
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-
-.hours p{
-    display: flex;
-    justify-content: space-between;
-}
-
-.address{
-    padding: 1.5rem 0;
-    margin-bottom: 1rem;
-}
-
-.contact-image{
-    max-height: 300px;
-    display: flex;
-}
-
-.contact-image img{
-    object-fit: cover;
-    overflow: hidden;
-}
-
-.footer{
-    background-color: var(--footer-backgroung-color);
-    color: var(--brackgroung-color)
-    
-}
-
-.footer h3{
-    color: var(--brackgroung-color)
-}
-
-.footer-inner{
-    display: flex;
-    padding: 2rem 0;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.footer-brand{
-    width: 85%;
-    margin:0 auto;
-}
-
-.footer-brand .logo{
-    margin-bottom: 0.5rem;
-}
-
-.social-icons{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-.social-icons img{
-    width: 1.2rem;
-    height: auto;
-
-}
-.social-icons a{
-   border-radius: 50px;
-    background-color: #555;
-    padding: 0.5rem;
-
-}
-.social-icons a:hover{
-    background-color: #333;
-    transform: scale(1.3);
-
-}
-
-.footer-social p{
-    font-size: 0.9rem;
-    padding: 1rem 0 1rem 0;
-    text-align: center;
-}
-
-@media (min-width: 768px){
-    .menu-desktop{
-        display: flex;
-    }
-    .menu-desktop ul{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    .menu-desktop ul a{
-        font-weight: 550;
-    }
-
-    .menu-mobile{
-        display: none;
-    }
-
-    .grid{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px){
-    .hero-overlay{
-        padding: 16rem 0;
-    }
-
-    .grid{
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.contact-box{
-    flex-direction: row;
-    max-width: 900;
-}
-
-.column{
-    flex: 1 1 50%;
-}
-
-.contact-image{
-    max-height: 500px;
-    display: flex;
-}
-
-.contact-text{
-    padding: 3rem;
-}
-
-.contact-text h2{
-    font-size: 2.5rem;
-    margin-top:0.5rem;
-}
-
-.footer-inner{
-    flex-direction: row;
-}
-
-.footer-social p{
-    text-align: right;
-}
-
-.social-icons{
-    justify-content: flex-end;
-}
-
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-orange-50">
+        <div class="w-4/5 max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 py-8">
+            <div class="w-4/5 mx-auto lg:w-auto lg:mx-0 flex-1">
+                <h3 class="font-pacifico text-3xl text-orange-50 mb-2">Café Aurora</h3>
+                <p>O melhor café da Cidade desde 2015</p>
+            </div>
+            <div class="flex-1">
+                <div class="flex justify-center lg:justify-end gap-4 mb-4">
+                    <a href="#" class="rounded-full bg-gray-600 p-2 hover:bg-gray-800 hover:scale-125 transition-all">
+                        <img src="images/instagram.png" alt="Link para Instagram" class="w-5 h-auto">
+                    </a>
+                    <a href="#" class="rounded-full bg-gray-600 p-2 hover:bg-gray-800 hover:scale-125 transition-all">
+                        <img src="images/facebook.png" alt="Link para Facebook" class="w-5 h-auto">
+                    </a>
+                    <a href="#" class="rounded-full bg-gray-600 p-2 hover:bg-gray-800 hover:scale-125 transition-all">
+                        <img src="images/whatsapp.png" alt="Link para Whatsapp" class="w-5 h-auto">
+                    </a>
+                </div>
+                <p class="text-sm py-4 text-center lg:text-right">&copy; 2025 Café Aurora. Todos os Direitos Reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

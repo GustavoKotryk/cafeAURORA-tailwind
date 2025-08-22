@@ -1,132 +1,314 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aurora</title>
+    
+    <!-- TAILWIND CSS - Importa todas as classes prontas do Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- GOOGLE FONTS - Importa as fontes Pacifico e Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS CUSTOMIZADO - Só 3 regrinhas específicas que o Tailwind não faz -->
+    <style>
+        /* Define a fonte padrão do site todo */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Classe para a fonte cursiva do logo */
+        .logo {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        /* Imagem de fundo da seção hero com sobreposição escura */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/aurora-capa.jpg') no-repeat center center/cover;
+        }
+    </style>
 </head>
-<body>
-    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-    </div>
-</body>
-</html>
 
-   <header class="header">
-        <div class="container header-inner">
-            <h1 class="logo"> Café Aurora</h1>
-            <nav class="menu" aria-label="Menu Principal"> 
-                <div class="menu-mobile">
-                    <button id="menu-toggle" aria-label="abrir o menu mobile">☰</button>
-                </div>    
-                <div class="menu-desktop">
-                    <ul>
-                        <li><a href=#>Início</a></li>
-                        <li><a href=#>Cárdapio</a></li>
-                        <li><a href=#>Contato</a></li>
+<body class="bg-orange-50 text-gray-800">
+    <!-- bg-orange-50 = fundo bege claro | text-gray-800 = texto cinza escuro -->
+
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header class="bg-orange-50 shadow-md w-full py-4">
+        <!-- bg-orange-50 = fundo bege | shadow-md = sombra média | w-full = largura 100% | py-4 = padding vertical 1rem -->
+        
+        <div class="w-4/5 max-w-6xl mx-auto flex justify-between items-center">
+            <!-- w-4/5 = largura 80% | max-w-6xl = máximo 1152px | mx-auto = centraliza | flex = display flex -->
+            <!-- justify-between = espaço entre elementos | items-center = alinha verticalmente no centro -->
+            
+            <!-- LOGO -->
+            <h1 class="logo text-3xl text-amber-700 font-medium">Café Aurora</h1>
+            <!-- logo = fonte Pacifico | text-3xl = font-size 1.875rem | text-amber-700 = cor marrom -->
+            <!-- font-medium = peso da fonte 500 -->
+            
+            <!-- NAVEGAÇÃO -->
+            <nav aria-label="Menu Principal">
+                <!-- MENU MOBILE - só aparece em telas pequenas -->
+                <div class="md:hidden">
+                    <!-- md:hidden = esconde em telas médias e grandes (768px+) -->
+                    <button id="menu-toggle" class="text-2xl font-black bg-transparent border-0" aria-label="abrir o menu mobile">
+                        <!-- text-2xl = tamanho 1.5rem | font-black = peso 900 | bg-transparent = fundo transparente -->
+                        <!-- border-0 = sem borda -->
+                        ☰
+                    </button>
+                </div>
+                
+                <!-- MENU DESKTOP - só aparece em telas médias/grandes -->
+                <div class="hidden md:flex">
+                    <!-- hidden = escondido por padrão | md:flex = vira flex em telas 768px+ -->
+                    <ul class="flex flex-row items-center gap-6">
+                        <!-- flex = display flex | flex-row = em linha | items-center = centraliza -->
+                        <!-- gap-6 = espaço de 1.5rem entre itens -->
+                        <li><a href="#" class="font-semibold hover:text-amber-700 transition-colors">Início</a></li>
+                        <li><a href="#" class="font-semibold hover:text-amber-700 transition-colors">Cárdapio</a></li>
+                        <li><a href="#" class="font-semibold hover:text-amber-700 transition-colors">Contato</a></li>
+                        <!-- font-semibold = peso 600 | hover:text-amber-700 = cor marrom no hover -->
+                        <!-- transition-colors = transição suave nas cores -->
                     </ul>
                 </div>
             </nav>
-
         </div>
+    </header>
 
-   </header>
-
-   <main>
+    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+    <main>
+        
+        <!-- ==================== SEÇÃO HERO (DESTAQUE) ==================== -->
         <section class="hero">
-            <div class="hero-overlay">
-                   <div class="hero-content">
-                    <h2>Sinta o sabor do verdadeiro café</h2>
-                    <p>Uma experiência úncia de sabores intensos e aromas involventes, preparados com grãos selecionados e muito carinho</p>
-                    <a href="#cardapio" class="btn">Conheça nosso cardápio</a>
+            <div class="hero-bg py-32 lg:py-64">
+                <!-- hero-bg = classe CSS customizada | py-32 = padding vertical 8rem -->
+                <!-- lg:py-64 = padding vertical 16rem em telas grandes (1024px+) -->
+                
+                <div class="text-center text-orange-50 z-10 px-8">
+                    <!-- text-center = texto centralizado | text-orange-50 = texto bege claro -->
+                    <!-- z-10 = z-index 10 | px-8 = padding horizontal 2rem -->
+                    
+                    <h2 class="text-4xl font-black leading-tight mb-4">
+                        <!-- text-4xl = font-size 2.25rem | font-black = peso 900 -->
+                        <!-- leading-tight = line-height 1.25 | mb-4 = margin-bottom 1rem -->
+                        Sinta o sabor do verdadeiro café
+                    </h2>
+                    
+                    <p class="text-xl mb-8">
+                        <!-- text-xl = font-size 1.25rem | mb-8 = margin-bottom 2rem -->
+                        Uma experiência única de sabores intensos e aromas envolventes, preparados com grãos selecionados e muito carinho
+                    </p>
+                    
+                    <a href="#cardapio" class="inline-block bg-amber-700 text-orange-50 px-7 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all duration-500">
+                        <!-- inline-block = display inline-block | bg-amber-700 = fundo marrom -->
+                        <!-- text-orange-50 = texto bege claro | px-7 = padding horizontal 1.75rem -->
+                        <!-- py-4 = padding vertical 1rem | rounded-lg = bordas arredondadas 0.5rem -->
+                        <!-- font-semibold = peso 600 | hover:bg-amber-800 = fundo mais escuro no hover -->
+                        <!-- transition-all = transição suave | duration-500 = duração 0.5s -->
+                        Conheça nosso cardápio
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="cardapio">
-            <div class="container">
-                <h2>Nossos Cafés Especiais</h2>
-                <p class="descricao">Descubra nossa seleção de cafés premium, cuidadosamente preparados para oferecer uma exeperiência sensorial inesquecivel</p>
-
-            </div>
-            <div class="grid container">
-                <div class="card">
-                    <img src="images/espresso.jpg" alt="Espresso Clássico">
-                    <div class="card-body">
-                        <h3>Espresso Clássico</h3>
-                        <p>Intenso e Encorpado, com crema perfeito e notas de chocolate amargo</p>
-                        <span class="price">R$ 8,90</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/capuccino.jpg" alt="Capuccino Cremoso">
-                    <div class="card-body">
-                        <h3>Capuccino Cremoso</h3>
-                        <p>Equilibrado e suave, com espuma aveludada e canela polvilhada</p>
-                        <span class="price">R$ 12,50</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/cafe-gelado.jpg" alt="Café Gelado">
-                    <div class="card-body">
-                        <h3>Café Gelado</h3>
-                        <p>Refrescante e aromático, com toques de baunilha e calda de caramelo</p>
-                        <span class="price">R$ 14,90</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/cafe-coado-especial.jpg" alt="Café Coado">
-                    <div class="card-body">
-                        <h3>Café Coado Especial</h3>
-                        <p>Método tradicional, que realça notas frutadas e acidez equilibrada</p>
-                        <span class="price">R$ 10,50</span>
-                    </div>
-                </div>
+        <!-- ==================== SEÇÃO CARDÁPIO ==================== -->
+        <section class="bg-white py-20">
+            <!-- bg-white = fundo branco | py-20 = padding vertical 5rem -->
+            
+            <!-- CABEÇALHO DA SEÇÃO -->
+            <div class="w-4/5 max-w-6xl mx-auto">
+                <!-- w-4/5 = largura 80% | max-w-6xl = máximo 1152px | mx-auto = centraliza -->
+                
+                <h2 class="text-center text-3xl mb-2">Nossos Cafés Especiais</h2>
+                <!-- text-center = texto centralizado | text-3xl = font-size 1.875rem | mb-2 = margin-bottom 0.5rem -->
+                
+                <p class="text-center max-w-2xl mx-auto mb-12 text-gray-600">
+                    <!-- text-center = centralizado | max-w-2xl = máximo 672px | mx-auto = centraliza -->
+                    <!-- mb-12 = margin-bottom 3rem | text-gray-600 = cinza médio -->
+                    Descubra nossa seleção de cafés premium, cuidadosamente preparados para oferecer uma experiência sensorial inesquecível
+                </p>
             </div>
             
-
-        </section>
-
-        <section class="contact">
-            <div class="container contact-box">
-                <div class="contact-text column">
-                    <h2>Horário de Funcionamento</h2>
-                    <div class="hours">
-                        <p><span>Segunda a Sexta</span><span>07:00 - 20:00</span></p>
-                        <p><span>Sábado</span><span>08:00 - 22:00</span></p>
-                        <p><span>Domingo</span><span>09:00 - 18:00</span></p>
+            <!-- GRID DE CARDS -->
+            <div class="w-4/5 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- w-4/5 = largura 80% | max-w-6xl = máximo 1152px | mx-auto = centraliza -->
+                <!-- grid = display grid | grid-cols-1 = 1 coluna por padrão -->
+                <!-- md:grid-cols-2 = 2 colunas em telas médias | lg:grid-cols-4 = 4 colunas em telas grandes -->
+                <!-- gap-8 = espaço de 2rem entre cards -->
+                
+                <!-- CARD 1 - ESPRESSO -->
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <!-- bg-orange-100 = fundo bege | rounded-xl = bordas muito arredondadas -->
+                    <!-- shadow-lg = sombra grande | overflow-hidden = esconde o que sai fora -->
+                    
+                    <img src="images/espresso.jpg" alt="Espresso Clássico" class="w-full h-auto block">
+                    <!-- w-full = largura 100% | h-auto = altura automática | block = display block -->
+                    
+                    <div class="p-6">
+                        <!-- p-6 = padding 1.5rem em todos os lados -->
+                        <h3 class="text-xl mb-2">Espresso Clássico</h3>
+                        <!-- text-xl = font-size 1.25rem | mb-2 = margin-bottom 0.5rem -->
+                        
+                        <p class="text-gray-600 mb-4">Intenso e Encorpado, com crema perfeito e notas de chocolate amargo</p>
+                        <!-- text-gray-600 = cinza médio | mb-4 = margin-bottom 1rem -->
+                        
+                        <span class="font-bold text-amber-700">R$ 8,90</span>
+                        <!-- font-bold = peso 700 | text-amber-700 = marrom -->
                     </div>
-                    <div class="address">
-                        <p><strong>Endereço</strong></p>
-                        <p>Rua das Flores, 123 - Centro</p>
-                        <p>São Paulo, SP</p>
-
-                    </div>
-                    <a href="#" class="btn">Ver no Mapa</a>
                 </div>
-                <div class="contact-image column">
-                    <img src="/CAFE-AURORA/images/aurora-horario.jpg" alt="Café sendo servido">
+
+                <!-- CARD 2 - CAPUCCINO -->
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <img src="images/capuccino.jpg" alt="Capuccino Cremoso" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Capuccino Cremoso</h3>
+                        <p class="text-gray-600 mb-4">Equilibrado e suave, com espuma aveludada e canela polvilhada</p>
+                        <span class="font-bold text-amber-700">R$ 12,50</span>
+                    </div>
+                </div>
+
+                <!-- CARD 3 - CAFÉ GELADO -->
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <img src="images/cafe-gelado.jpg" alt="Café Gelado" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Café Gelado</h3>
+                        <p class="text-gray-600 mb-4">Refrescante e aromático, com toques de baunilha e calda de caramelo</p>
+                        <span class="font-bold text-amber-700">R$ 14,90</span>
+                    </div>
+                </div>
+
+                <!-- CARD 4 - CAFÉ COADO -->
+                <div class="bg-orange-100 rounded-xl shadow-lg overflow-hidden">
+                    <img src="images/cafe-coado-especial.jpg" alt="Café Coado" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Café Coado Especial</h3>
+                        <p class="text-gray-600 mb-4">Método tradicional, que realça notas frutadas e acidez equilibrada</p>
+                        <span class="font-bold text-amber-700">R$ 10,50</span>
+                    </div>
                 </div>
             </div>
-
         </section>
 
-   </main>
+        <!-- ==================== SEÇÃO CONTATO ==================== -->
+        <section class="bg-orange-100 py-16">
+            <!-- bg-orange-100 = fundo bege | py-16 = padding vertical 4rem -->
+            
+            <div class="w-4/5 max-w-6xl mx-auto">
+                <!-- w-4/5 = largura 80% | max-w-6xl = máximo 1152px | mx-auto = centraliza -->
+                
+                <div class="bg-white rounded-2xl overflow-hidden flex flex-col lg:flex-row max-w-4xl mx-auto">
+                    <!-- bg-white = fundo branco | rounded-2xl = bordas muito arredondadas -->
+                    <!-- overflow-hidden = esconde overflow | flex = display flex -->
+                    <!-- flex-col = direção coluna | lg:flex-row = linha em telas grandes -->
+                    <!-- max-w-4xl = máximo 896px | mx-auto = centraliza -->
+                    
+                    <!-- TEXTO DE CONTATO -->
+                    <div class="flex-1 p-4 mb-8 lg:p-12 lg:mb-0">
+                        <!-- flex-1 = ocupa espaço disponível | p-4 = padding 1rem -->
+                        <!-- mb-8 = margin-bottom 2rem | lg:p-12 = padding 3rem em telas grandes -->
+                        <!-- lg:mb-0 = sem margin-bottom em telas grandes -->
+                        
+                        <h2 class="text-2xl lg:text-4xl mb-4 lg:mt-2">Horário de Funcionamento</h2>
+                        <!-- text-2xl = font-size 1.5rem | lg:text-4xl = 2.25rem em telas grandes -->
+                        <!-- mb-4 = margin-bottom 1rem | lg:mt-2 = margin-top 0.5rem em telas grandes -->
+                        
+                        <!-- HORÁRIOS -->
+                        <div class="mb-6">
+                            <!-- mb-6 = margin-bottom 1.5rem -->
+                            <p class="flex justify-between py-1">
+                                <!-- flex = display flex | justify-between = espaço entre elementos -->
+                                <!-- py-1 = padding vertical 0.25rem -->
+                                <span>Segunda a Sexta</span><span>07:00 - 20:00</span>
+                            </p>
+                            <p class="flex justify-between py-1">
+                                <span>Sábado</span><span>08:00 - 22:00</span>
+                            </p>
+                            <p class="flex justify-between py-1">
+                                <span>Domingo</span><span>09:00 - 18:00</span>
+                            </p>
+                        </div>
+                        
+                        <!-- ENDEREÇO -->
+                        <div class="py-6 mb-4">
+                            <!-- py-6 = padding vertical 1.5rem | mb-4 = margin-bottom 1rem -->
+                            <p class="font-bold">Endereço</p>
+                            <!-- font-bold = peso 700 -->
+                            <p>Rua das Flores, 123 - Centro</p>
+                            <p>São Paulo, SP</p>
+                        </div>
+                        
+                        <!-- BOTÃO -->
+                        <a href="#" class="inline-block bg-amber-700 text-orange-50 px-7 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all duration-500">
+                            Ver no Mapa
+                        </a>
+                    </div>
+                    
+                    <!-- IMAGEM -->
+                    <div class="flex-1 max-h-80 lg:max-h-96 flex">
+                        <!-- flex-1 = ocupa espaço disponível | max-h-80 = altura máxima 20rem -->
+                        <!-- lg:max-h-96 = altura máxima 24rem em telas grandes | flex = display flex -->
+                        
+                        <img src="images/aurora-horario.jpg" alt="Café sendo servido" class="w-full object-cover">
+                        <!-- w-full = largura 100% | object-cover = corta a imagem proporcionalmente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
-   <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <h3 class="logo">Café Aurora</h3>
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="bg-gray-900 text-orange-50">
+        <!-- bg-gray-900 = fundo cinza muito escuro | text-orange-50 = texto bege claro -->
+        
+        <div class="w-4/5 max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 py-8">
+            <!-- w-4/5 = largura 80% | max-w-6xl = máximo 1152px | mx-auto = centraliza -->
+            <!-- flex = display flex | flex-col = direção coluna | lg:flex-row = linha em telas grandes -->
+            <!-- gap-8 = espaço 2rem entre elementos | py-8 = padding vertical 2rem -->
+            
+            <!-- INFORMAÇÕES DA MARCA -->
+            <div class="w-4/5 mx-auto lg:w-auto lg:mx-0 flex-1">
+                <!-- w-4/5 = largura 80% | mx-auto = centraliza | lg:w-auto = largura automática em telas grandes -->
+                <!-- lg:mx-0 = sem margin em telas grandes | flex-1 = ocupa espaço disponível -->
+                
+                <h3 class="logo text-3xl text-orange-50 mb-2">Café Aurora</h3>
+                <!-- logo = fonte Pacifico | text-3xl = font-size 1.875rem | text-orange-50 = bege claro -->
+                <!-- mb-2 = margin-bottom 0.5rem -->
+                
                 <p>O melhor café da Cidade desde 2015</p>
             </div>
-            <div class="footer-social">
-                <div class="social-icons">
-                    <a href="#"><img src="images/instagram.png" alt="Link para Instagram"></a>
-                    <a href="#"><img src="images/facebook.png" alt="Link para Facebook"></a>
-                    <a href="#"><img src="images/whatsapp.png" alt="Link para Whatsapp"></a>
+            
+            <!-- REDES SOCIAIS E COPYRIGHT -->
+            <div class="flex-1">
+                <!-- flex-1 = ocupa espaço disponível -->
+                
+                <!-- ÍCONES SOCIAIS -->
+                <div class="flex justify-center lg:justify-end gap-4 mb-4">
+                    <!-- flex = display flex | justify-center = centraliza | lg:justify-end = alinha à direita em telas grandes -->
+                    <!-- gap-4 = espaço 1rem entre ícones | mb-4 = margin-bottom 1rem -->
+                    
+                    <a href="#" class="rounded-full bg-gray-600 p-2 hover:bg-gray-800 hover:scale-125 transition-all">
+                        <!-- rounded-full = bordas completamente arredondadas | bg-gray-600 = fundo cinza -->
+                        <!-- p-2 = padding 0.5rem | hover:bg-gray-800 = fundo mais escuro no hover -->
+                        <!-- hover:scale-125 = aumenta 125% no hover | transition-all = transição suave -->
+                        <img src="images/instagram.png" alt="Link para Instagram" class="w-5 h-auto">
+                        <!-- w-5 = largura 1.25rem | h-auto = altura automática -->
+                    </a>
+                    <a href="#" class="rounded-full bg-gray-600 p-2 hover:bg-gray-800 hover:scale-125 transition-all">
+                        <img src="images/facebook.png" alt="Link para Facebook" class="w-5 h-auto">
+                    </a>
+                    <a href="#" class="rounded-full bg-gray-600 p-2 hover:bg-gray-800 hover:scale-125 transition-all">
+                        <img src="images/whatsapp.png" alt="Link para Whatsapp" class="w-5 h-auto">
+                    </a>
                 </div>
-                <p> &copy; 2025 Café Aurora. Todos os Direitos Reservados</p>
+                
+                <!-- COPYRIGHT -->
+                <p class="text-sm py-4 text-center lg:text-right">
+                    <!-- text-sm = font-size 0.875rem | py-4 = padding vertical 1rem -->
+                    <!-- text-center = centralizado | lg:text-right = alinhado à direita em telas grandes -->
+                    &copy; 2025 Café Aurora. Todos os Direitos Reservados
+                </p>
             </div>
         </div>
-
-   </footer>
+    </footer>
 </body>
 </html>
